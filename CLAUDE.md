@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js 15 React application that serves as a frontend starter template for LiveKit Agents. It provides a voice interface using the LiveKit JavaScript SDK with support for voice interaction, transcriptions, and virtual avatars.
+This is a Next.js 15 React application that serves as an AI-powered voice assistant by Overemployed Ltd. It provides a voice interface with support for voice interaction, transcriptions, and virtual avatars.
 
 ## Development Commands
 
@@ -21,7 +21,7 @@ The project uses pnpm as package manager (specified in package.json).
 
 ### Key Technologies
 - **Next.js 15** with App Router architecture
-- **LiveKit** for real-time voice/video communication
+- **WebRTC** for real-time voice/video communication
 - **React 19** with TypeScript
 - **Tailwind CSS** for styling
 - **Radix UI** components for UI primitives
@@ -37,7 +37,7 @@ app/                    - Next.js App Router pages and API routes
 └── layout.tsx         - Root layout
 
 components/            - Reusable React components
-├── livekit/          - LiveKit-specific components (agent controls, chat, video tiles)
+├── livekit/          - Real-time communication components (agent controls, chat, video tiles)
 ├── ui/               - Base UI components (shadcn/ui style)
 ├── app.tsx           - Main app component managing room state
 ├── session-view.tsx  - Active session interface
@@ -55,32 +55,32 @@ lib/                  - Utility functions and types
 
 ### Core Components Architecture
 
-1. **App Component** (`components/app.tsx`) - Central state manager for LiveKit room connection and session lifecycle
+1. **App Component** (`components/app.tsx`) - Central state manager for WebRTC room connection and session lifecycle
 2. **Welcome Component** - Initial landing screen with start call functionality  
 3. **SessionView Component** - Active call interface with video tiles, chat, and controls
-4. **LiveKit Components** - Specialized components for agent interaction, media handling, and chat
+4. **Communication Components** - Specialized components for agent interaction, media handling, and chat
 
 ### Configuration System
 
 - **App Configuration** (`app-config.ts`) - Centralized configuration for branding, features, and UI customization
 - **Theme System** - Light/dark mode support with system preference detection
-- **Environment Variables** - LiveKit credentials configured via `.env.local`
+- **Environment Variables** - WebRTC credentials configured via `.env.local`
 
 ### State Management
 
-The application uses React state and LiveKit's room context for:
+The application uses React state and WebRTC room context for:
 - Session state (started/stopped)
 - Room connection state
 - Media device permissions
 - Chat and transcription data
 
-### LiveKit Integration
+### WebRTC Integration
 
-Core LiveKit features implemented:
+Core real-time communication features implemented:
 - Real-time voice communication
 - Video streaming and screen sharing
 - Chat messaging with transcription
 - Agent control interface
 - Media device selection and management
 
-The app follows LiveKit's recommended patterns for room lifecycle management and participant handling.
+The app follows modern WebRTC patterns for room lifecycle management and participant handling.
